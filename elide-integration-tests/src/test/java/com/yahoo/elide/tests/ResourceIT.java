@@ -1477,6 +1477,26 @@ public class ResourceIT extends AbstractIntegrationTestInitializer {
                 .body(equalTo(expectedColl));
     }
 
+    @Test(priority = 35)
+    public void testNestedAttributeFilters() {
+        String expectedParentChild = jsonParser.getJson("/ResourceIT/testNestedAttributeFiltersChild4.resp.json");
+        String expectedChildParent = jsonParser.getJson("/ResourceIT/testNestedAttributeFiltersParentLink.resp.json");
+        given()
+                .contentType(JSONAPI_CONTENT_TYPE_WITH_JSON_PATCH_EXTENSION)
+                .accept(JSONAPI_CONTENT_TYPE_WITH_JSON_PATCH_EXTENSION)
+                .get("/parent?filter[parent.children.id]=4")
+                .then()
+                .statusCode(HttpStatus.SC_OK)
+                .body(equalTo(expectedParentChild));
+        given()
+                .contentType(JSONAPI_CONTENT_TYPE_WITH_JSON_PATCH_EXTENSION)
+                .accept(JSONAPI_CONTENT_TYPE_WITH_JSON_PATCH_EXTENSION)
+                .get("/child?filter[child.parents.firstName]=Link")
+                .then()
+                .statusCode(HttpStatus.SC_OK)
+                .body(equalTo(expectedChildParent));
+    }
+
     @Test(priority = 36)
     public void testNestedPatch() {
         String req = jsonParser.getJson("/ResourceIT/nestedPatchCreate.req.json");

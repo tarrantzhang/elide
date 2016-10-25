@@ -1,0 +1,80 @@
+{
+  "data": [
+    {
+      "type": "parent",
+      "id": "3",
+      "attributes": {
+        "firstName": "Link"
+      },
+      "relationships": {
+        "children": {
+          "data": [
+            {
+              "type": "child",
+              "id": "4"
+            },
+            {
+              "type": "child",
+              "id": "5"
+            }
+          ]
+        },
+        "spouses": {
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "parent",
+      "id": "4",
+      "attributes": {
+        "firstName": "Unknown"
+      },
+      "relationships": {
+        "children": {
+          "data": [
+            {
+              "type": "child",
+              "id": "4"
+            },
+            {
+              "type": "child",
+              "id": "5"
+            }
+          ]
+        },
+        "spouses": {
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "parent",
+      "id": "10",
+      "attributes": {
+        "firstName": "bart"
+      },
+      "relationships": {
+        "children": {
+          "data": [
+            {
+              "type": "child",
+              "id": "4"
+            },
+            {
+              "type": "child",
+              "id": "5"
+            },
+            {
+              "type": "child",
+              "id": "7"
+            }
+          ]
+        },
+        "spouses": {
+          "data": []
+        }
+      }
+    }
+  ]
+}

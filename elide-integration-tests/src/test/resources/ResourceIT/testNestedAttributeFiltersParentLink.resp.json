@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "type": "child",
+      "id": "4",
+      "attributes": {
+        "name": null
+      },
+      "relationships": {
+        "friends": {
+          "data": []
+        },
+        "parents": {
+          "data": [
+            {
+              "type": "parent",
+              "id": "3"
+            },
+            {
+              "type": "parent",
+              "id": "4"
+            },
+            {
+              "type": "parent",
+              "id": "10"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "child",
+      "id": "5",
+      "attributes": {
+        "name": null
+      },
+      "relationships": {
+        "friends": {
+          "data": []
+        },
+        "parents": {
+          "data": [
+            {
+              "type": "parent",
+              "id": "3"
+            },
+            {
+              "type": "parent",
+              "id": "4"
+            },
+            {
+              "type": "parent",
+              "id": "10"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
