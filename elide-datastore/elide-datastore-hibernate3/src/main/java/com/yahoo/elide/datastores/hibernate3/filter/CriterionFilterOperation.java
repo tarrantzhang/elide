@@ -84,16 +84,7 @@ public class CriterionFilterOperation implements FilterOperation<Criterion> {
     public Criterion apply(Predicate predicate) {
         List<Predicate.PathElement> path = predicate.getPath();
 
-        /* If the predicate refers to a nested association, the restriction should be 'alias.fieldName' */
-        String alias;
-        if (path.size() > 1) {
-            alias = getAlias(path);
-            alias = alias + "." + path.get(path.size() - 1).getFieldName();
-        /* If the predicate refers to the root entity, the restriction should be 'fieldName' */
-        } else {
-            alias = path.get(0).getFieldName();
-        }
-
+        String alias = predicate.getFieldPath();
         switch (predicate.getOperator()) {
             case IN:
                 if (predicate.getValues().isEmpty()) {
