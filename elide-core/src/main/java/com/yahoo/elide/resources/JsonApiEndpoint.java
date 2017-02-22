@@ -9,8 +9,6 @@ import com.yahoo.elide.Elide;
 import com.yahoo.elide.ElideResponse;
 import com.yahoo.elide.annotation.PATCH;
 
-import java.util.function.Function;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -27,6 +25,7 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.core.UriInfo;
+import java.util.function.Function;
 
 /**
  * Default endpoint/servlet for using Elide and JSONAPI.
@@ -139,12 +138,5 @@ public class JsonApiEndpoint {
 
     private static Response build(ElideResponse response) {
         return Response.status(response.getResponseCode()).entity(response.getBody()).build();
-    }
-
-    /**
-     * Placeholder for injection frameworks.
-     */
-    public interface DefaultOpaqueUserFunction extends Function<SecurityContext, Object> {
-        // Empty
     }
 }
